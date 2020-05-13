@@ -12,8 +12,14 @@ export class PoemForm extends React.Component{
 
     setContent = e => this.setState({ content: e.target.value })
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
+        let newPoem = this.state
         // What should we do here?
+        this.props.addPoem(newPoem)
+        this.setState({
+            state: this.state
+        })
     }
 
     render(){
